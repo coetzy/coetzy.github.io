@@ -10,11 +10,11 @@ const Layout = () => {
   return (
     <div
       className={cx(
-        "grid bg-cover bg-no-repeat min-h-screen bg-center font-brandon",
-        match ? "bg-[url('images/1.jpg')]" : "bg-white"
+        "grid bg-cover font-brandon bg-white",
+        match ? "h-screen" : "min-h-screen"
       )}
       style={{
-        gridTemplateRows: "max-content 1fr max-content",
+        gridTemplateRows: "max-content minmax(0,1fr) max-content",
       }}
     >
       <Header />
