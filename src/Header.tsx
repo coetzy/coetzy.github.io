@@ -78,10 +78,10 @@ const Menu = () => {
 };
 
 const Header = () => (
-  <header className="flex flex-wrap justify-between p-8 px-24 border-b bg-white font-saira tracking-header">
+  <header className="flex flex-wrap justify-between items-center px-24 border-b bg-white font-saira tracking-header">
     <nav>
       <Link className="text-black uppercase text-2xl" to="/">
-        Coetzy
+        <img className="w-24" src={require(`./images/tag.png`)}></img>
       </Link>
     </nav>
     <Menu />
