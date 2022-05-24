@@ -83,7 +83,9 @@ const Filter = () => {
             <span className="h-8 w-0.5 bg-black group-hover:bg-softPink absolute rotate-45 left-[23px] top-[8px]" />
             <span className="h-8 w-0.5 bg-black group-hover:bg-softPink absolute -rotate-45 left-[23px] top-[8px]" />
           </button>
-          <CollectionMenu collections={collections} />
+          <div className="p-2 flex flex-col w-full">
+            <CollectionMenu collections={collections} />
+          </div>
         </nav>
       )}
     </>
