@@ -5,7 +5,7 @@ import { cx } from "./common";
 const Card = ({ item }) => {
   const cardRef = useRef<any>();
 
-  const [isLoading, setLoading] = useState(true);
+  const [isLoading, setLoading] = useState(false);
   const [open, setOpen] = useState(false);
 
   const handleClick = () => setOpen(!open);
