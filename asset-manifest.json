@@ -1,12 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.46fac820.css",
-    "main.js": "/static/js/main.56c0b90d.js",
+    "main.css": "/static/css/main.3c131d68.css",
+    "main.js": "/static/js/main.66892165.js",
     "static/js/787.83aed2d4.chunk.js": "/static/js/787.83aed2d4.chunk.js",
-    "static/media/fotoWeb.mp4": "/static/media/fotoWeb.184d1c10c5aaf4951a17.mp4",
     "static/media/03.png": "/static/media/03.e1ae4c1405dbc64a8b22.png",
     "static/media/01.png": "/static/media/01.8bec0d750bb41c347e69.png",
-    "static/media/WhatsApp Video 2022-05-23 at 11.56.40 PM.mp4": "/static/media/WhatsApp Video 2022-05-23 at 11.56.40 PM.1456a6870afdf0cd064b.mp4",
     "static/media/02.mp4": "/static/media/02.f7f2b0c75ae6b3ffe258.mp4",
     "static/media/20.jpg": "/static/media/20.84499b62256d30e08e97.jpg",
     "static/media/11.png": "/static/media/11.73b9eaa42a6da6074032.png",
@@ -67,19 +65,23 @@
     "static/media/07.jpg": "/static/media/07.44418e973b2f713e6c6d.jpg",
     "static/media/32.jpg": "/static/media/32.a084fed63b8d19327dda.jpg",
     "static/media/08.jpg": "/static/media/08.1e9fe7a798200a3a20dd.jpg",
+    "static/media/saira-extra-condensed-all-400-normal.woff": "/static/media/saira-extra-condensed-all-400-normal.422f6067855c3af5681e.woff",
     "static/media/tag.png": "/static/media/tag.0ddb1cfba547f7898552.png",
+    "static/media/saira-extra-condensed-latin-400-normal.woff2": "/static/media/saira-extra-condensed-latin-400-normal.adfcb9d5dda69f93e355.woff2",
+    "static/media/saira-extra-condensed-latin-ext-400-normal.woff2": "/static/media/saira-extra-condensed-latin-ext-400-normal.73b714caae93fa59818b.woff2",
+    "static/media/saira-extra-condensed-vietnamese-400-normal.woff2": "/static/media/saira-extra-condensed-vietnamese-400-normal.97102f9f4cd3cfde0ff8.woff2",
     "static/media/logo.svg": "/static/media/logo.6ce24c58023cc2f8fd88.svg",
     "static/media/instagram-brands.svg": "/static/media/instagram-brands.7c6bfe4680b1cacb69d906510226cbf9.svg",
-    "index.html": "/index.html",
     "static/media/linkedin-brands.svg": "/static/media/linkedin-brands.787aa301244425e7fe5bdcff7917892f.svg",
+    "index.html": "/index.html",
     "static/media/phone-flip-solid.svg": "/static/media/phone-flip-solid.ab98421801cb25251057a3461b6eb010.svg",
     "static/media/envelope-solid.svg": "/static/media/envelope-solid.5c1c1b728e1ee5d36dec522469b3186e.svg",
-    "main.46fac820.css.map": "/static/css/main.46fac820.css.map",
-    "main.56c0b90d.js.map": "/static/js/main.56c0b90d.js.map",
+    "main.3c131d68.css.map": "/static/css/main.3c131d68.css.map",
+    "main.66892165.js.map": "/static/js/main.66892165.js.map",
     "787.83aed2d4.chunk.js.map": "/static/js/787.83aed2d4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.46fac820.css",
-    "static/js/main.56c0b90d.js"
+    "static/css/main.3c131d68.css",
+    "static/js/main.66892165.js"
   ]
 }
