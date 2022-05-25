@@ -3,6 +3,7 @@ import { useParams, useSearchParams } from "react-router-dom";
 
 import Card from "./Card";
 import { cx } from "./common";
+import Cross from "./Cross";
 import imagedb from "./imagedb";
 import Check from "./images/check.png";
 import useWindowDimensions from "./useDimensions";
@@ -45,9 +46,13 @@ const CollectionMenu = ({ collections }) => {
   );
 };
 
+const label = "Categorías";
+
 const Filter = () => {
-  const [isOpen, setOpen] = useState(false);
   let urlParams = useParams();
+  const [isOpen, setOpen] = useState(false);
+
+  const handleClick = () => setOpen(!isOpen);
 
   const collections = [
     ...new Set<string>(
@@ -60,32 +65,25 @@ const Filter = () => {
 
   return collections && collections.length ? (
     <>
-      <div className="hidden 2xl:flex p-4 2xl:w-64 flex-col border-r">
-        <span className="p-2 text-xl font-saira tracking-header">
-          Categorías
-        </span>
+      <div className="hidden lg:flex p-4 lg:w-64 flex-col border-r">
+        <span className="p-2 text-2xl font-saira tracking-header">{label}</span>
         <CollectionMenu collections={collections} />
       </div>
-      <div className="2xl:hidden p-2 flex flex-col w-full">
-        <button
-          onClick={() => setOpen(!isOpen)}
-          className=" text-black text-2xl pt-4 hover:text-softPink font-saira tracking-header"
-        >
-          Categorías
-        </button>
-      </div>
+      <button
+        onClick={() => setOpen(!isOpen)}
+        className="lg:hidden p-4 pb-0 text-black text-2xl hover:text-softPink font-saira tracking-header"
+      >
+        {label}
+      </button>
       {isOpen && (
-        <nav className="absolute top-0 left-0 h-screen w-screen bg-white flex flex-col items-center z-10 p-4 px-24">
-          <button
-            onClick={() => setOpen(false)}
-            className="group w-12 h-12 absolute right-[84px] top-[24px]"
-          >
-            <span className="h-8 w-0.5 bg-black group-hover:bg-softPink absolute rotate-45 left-[23px] top-[8px]" />
-            <span className="h-8 w-0.5 bg-black group-hover:bg-softPink absolute -rotate-45 left-[23px] top-[8px]" />
-          </button>
-          <div className="p-2 flex flex-col w-full">
-            <CollectionMenu collections={collections} />
+        <nav className="absolute inset-0 px-8 py-20 text-black bg-white/90">
+          <div className="flex w-full items-center justify-between">
+            <span className="p-2 text-2xl font-saira tracking-header">
+              {label}
+            </span>
+            <Cross onClick={handleClick} />
           </div>
+          <CollectionMenu collections={collections} />
         </nav>
       )}
     </>
@@ -99,9 +97,12 @@ const Gallery = () => {
   const [search, setSearch] = useSearchParams();
 
   return (
-    <div key={urlParams.type} className="flex flex-col 2xl:flex-row">
+    <div
+      key={urlParams.type}
+      className="flex flex-col lg:flex-row overflow-auto"
+    >
       <Filter />
-      <div className="flex-1 p-4 justify-center flex">
+      <div className="flex-1 justify-center flex overflow-auto m-2">
         {urlParams.type &&
           splitChildren(
             imagedb[urlParams.type].filter((item) => {

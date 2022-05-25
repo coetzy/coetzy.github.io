@@ -1,38 +1,30 @@
 import { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
+import Burger from "./Burger";
+import Cross from "./Cross";
 import imagedb from "./imagedb";
 
 interface MenuProps {
   className: string;
-  withHome: boolean;
-  style?: any;
-  onClose?: any;
+  onClick?: any;
+  withHome?: boolean;
 }
 
-const NavMenu = ({ className, style, withHome, onClose }: MenuProps) => (
+const NavMenu = ({ className, onClick, withHome = false }: MenuProps) => (
   <>
     {withHome && (
-      <NavLink
-        className={className}
-        style={style}
-        to="/"
-        key="/"
-        onClick={onClose}
-      >
-        Inicio
-      </NavLink>
+      <div className="flex w-full items-center justify-between">
+        <Link className={className} to="/" key="/" onClick={onClick}>
+          Inicio
+        </Link>
+        <Cross onClick={onClick} />
+      </div>
     )}
     {Object.keys(imagedb).map((key) => (
-      <NavLink
-        className={className}
-        style={style}
-        to={key}
-        key={key}
-        onClick={onClose}
-      >
+      <Link className={className} to={key} key={key} onClick={onClick}>
         {key}
-      </NavLink>
+      </Link>
     ))}
   </>
 );
@@ -40,35 +32,19 @@ const NavMenu = ({ className, style, withHome, onClose }: MenuProps) => (
 const Menu = () => {
   const [isOpen, setOpen] = useState(false);
 
+  const handleClick = () => setOpen(!isOpen);
+
   return (
     <>
-      <button
-        onClick={() => setOpen(!isOpen)}
-        className="md:hidden text-black flex flex-col justify-around w-8 h-6"
-      >
-        <span className="w-8 h-1 rounded-lg bg-black" />
-        <span className="w-8 h-1 rounded-lg bg-black" />
-        <span className="w-8 h-1 rounded-lg bg-black" />
-      </button>
+      <Burger className="md:hidden" onClick={handleClick} />
       <nav className="hidden md:block text-black">
-        <NavMenu
-          className="relative mx-2 text-black uppercase text-xl hover:text-softPink  hover:border-softPink hover:border-b"
-          // style={({ isActive }) => ({ color: isActive ? "#FBAB45" : "" })}
-          withHome={false}
-        />
+        <NavMenu className="relative mx-2 text-black uppercase text-xl hover:text-softPink  hover:border-softPink hover:border-b" />
       </nav>
       {isOpen && (
-        <nav className="absolute top-0 left-0 h-screen w-screen bg-white flex flex-col items-center z-10 p-4 px-24">
-          <button
-            onClick={() => setOpen(false)}
-            className="group w-12 h-12 absolute right-[84px] top-[24px]"
-          >
-            <span className="h-8 w-0.5 bg-black group-hover:bg-softPink absolute rotate-45 left-[23px] top-[8px]" />
-            <span className="h-8 w-0.5 bg-black group-hover:bg-softPink absolute -rotate-45 left-[23px] top-[8px]" />
-          </button>
+        <nav className="absolute top-0 left-0 h-screen w-screen bg-white flex flex-col items-center z-10 px-8">
           <NavMenu
-            onClose={() => setOpen(false)}
-            className="capitalize text-2xl py-4 w-full text-left text-black hover:text-softPink"
+            onClick={handleClick}
+            className="capitalize w-full text-2xl py-4 text-left text-black hover:text-softPink"
             withHome
           />
         </nav>
@@ -78,12 +54,10 @@ const Menu = () => {
 };
 
 const Header = () => (
-  <header className="flex flex-wrap justify-between items-center px-24 border-b bg-white font-saira tracking-header">
-    <nav>
-      <Link className="text-black uppercase text-2xl" to="/">
-        <img className="w-24" src={require(`./images/tag.png`)}></img>
-      </Link>
-    </nav>
+  <header className="flex flex-wrap justify-between px-8 items-center border-b bg-white font-saira tracking-header">
+    <Link className="text-black uppercase text-2xl" to="/">
+      <img className="w-24" src={require(`./images/tag.png`)}></img>
+    </Link>
     <Menu />
   </header>
 );
