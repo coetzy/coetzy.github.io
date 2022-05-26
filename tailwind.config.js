@@ -9,9 +9,11 @@ module.exports = {
       fontFamily: {
         brandon: "Brandon, sans-serif",
         saira: "Saira Extra Condensed, sans-serif",
+        oswald: "Oswald, sans-serif",
       },
       letterSpacing: {
         header: "2.2px",
+        oswald: "1px",
       },
     },
   },

@@ -1,5 +1,6 @@
 import "./index.css";
 import "@fontsource/saira-extra-condensed";
+import "@fontsource/oswald/200.css";
 
 import React from "react";
 import ReactDOM from "react-dom";
