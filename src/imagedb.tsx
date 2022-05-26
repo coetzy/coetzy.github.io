@@ -375,6 +375,10 @@ const imagedb: { [key: string]: any } = {
       path: "./images/animacion/02.mp4",
       collection: "",
     },
+    {
+      path: "./images/animacion/mujer.mp4",
+      collection: "",
+    },
   ],
 };
 
