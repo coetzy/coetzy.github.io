@@ -1,4 +1,5 @@
 const imagedb: { [key: string]: any } = {
+  acerca: [],
   murales: [
     {
       path: "./images/murales/3.jpg",
