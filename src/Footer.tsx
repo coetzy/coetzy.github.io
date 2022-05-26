@@ -4,7 +4,7 @@ import { ReactComponent as Linkedin } from "./images/linkedin-brands.svg";
 import { ReactComponent as Phone } from "./images/phone-flip-solid.svg";
 
 const Footer = () => (
-  <footer className="columns-1 sm:columns-2 md:columns-4 justify-center p-5 sm:py-5 border-t bg-white">
+  <footer className="columns-2 md:columns-4 justify-center p-5 sm:py-5 border-t bg-white">
     <div className="flex flex-row items-center mb-2 sm:mb-0 md:justify-center">
       <Phone className="w-5 mr-2 fill-black" />
       <div>

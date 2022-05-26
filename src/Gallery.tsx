@@ -99,7 +99,7 @@ const Gallery = () => {
   return (
     <div
       key={urlParams.type}
-      className="flex flex-col lg:flex-row overflow-auto"
+      className="flex flex-1 flex-col lg:flex-row overflow-auto"
     >
       <Filter />
       <div className="flex-1 justify-center flex overflow-auto m-2">
