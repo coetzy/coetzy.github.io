@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
+import { useData } from "./api";
 import Burger from "./Burger";
 import Cross from "./Cross";
-import imagedb from "./imagedb";
 
 interface MenuProps {
   className: string;
@@ -11,23 +11,32 @@ interface MenuProps {
   withHome?: boolean;
 }
 
-const NavMenu = ({ className, onClick, withHome = false }: MenuProps) => (
-  <>
-    {withHome && (
-      <div className="flex w-full items-center justify-between">
-        <Link className={className} to="/" key="/" onClick={onClick}>
-          Inicio
-        </Link>
-        <Cross onClick={onClick} />
-      </div>
-    )}
-    {Object.keys(imagedb).map((key) => (
-      <Link className={className} to={key} key={key} onClick={onClick}>
-        {key}
-      </Link>
-    ))}
-  </>
-);
+const NavMenu = ({ className, onClick, withHome = false }: MenuProps) => {
+  const { isLoading, isError, data } = useData();
+
+  if (isLoading || isError) {
+    return null;
+  }
+
+  return (
+    <>
+      {withHome && (
+        <div className="flex w-full items-center justify-between">
+          <Link className={className} to="/" key="/" onClick={onClick}>
+            Inicio
+          </Link>
+          <Cross onClick={onClick} />
+        </div>
+      )}
+      {data &&
+        data.menu.map((key) => (
+          <Link className={className} to={key} key={key} onClick={onClick}>
+            {key}
+          </Link>
+        ))}
+    </>
+  );
+};
 
 const Menu = () => {
   const [isOpen, setOpen] = useState(false);
@@ -53,13 +62,16 @@ const Menu = () => {
   );
 };
 
-const Header = () => (
-  <header className="flex flex-wrap justify-between px-8 items-center border-b bg-white font-saira tracking-header">
-    <Link className="text-black uppercase text-2xl" to="/">
-      <img className="w-24" src={require(`./images/tag.png`)}></img>
-    </Link>
-    <Menu />
-  </header>
-);
+const Header = () => {
+  const { data } = useData();
+  return (
+    <header className="flex flex-wrap justify-between px-8 items-center border-b bg-white font-saira tracking-header">
+      <Link className="text-black uppercase text-2xl" to="/">
+        <img className="h-16" src={data && data.logo}></img>
+      </Link>
+      <Menu />
+    </header>
+  );
+};
 
 export default Header;

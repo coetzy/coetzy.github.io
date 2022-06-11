@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { useParams, useSearchParams } from "react-router-dom";
 
+import { useData } from "./api";
 import Card from "./Card";
 import { cx } from "./common";
 import Cross from "./Cross";
-import imagedb from "./imagedb";
 import Check from "./images/check.png";
 import useWindowDimensions from "./useDimensions";
 
@@ -51,13 +51,15 @@ const label = "Categorías";
 const Filter = () => {
   let urlParams = useParams();
   const [isOpen, setOpen] = useState(false);
+  const { data } = useData();
 
   const handleClick = () => setOpen(!isOpen);
 
   const collections = [
     ...new Set<string>(
       urlParams.type &&
-        imagedb[urlParams.type]
+        data &&
+        data[urlParams.type]
           .filter((item) => item.collection) // remove empty
           .map((item) => item.collection)
     ),
@@ -93,6 +95,7 @@ const Filter = () => {
 const Gallery = () => {
   let urlParams = useParams();
   const { width } = useWindowDimensions();
+  const { data } = useData();
 
   const [search, setSearch] = useSearchParams();
 
@@ -105,12 +108,13 @@ const Gallery = () => {
       <div className="flex-1 justify-center flex overflow-auto m-2">
         {urlParams.type &&
           splitChildren(
-            imagedb[urlParams.type].filter((item) => {
-              let keys = [...search.keys()];
-              return keys && keys.length
-                ? keys.includes(item.collection)
-                : true;
-            }),
+            data &&
+              data[urlParams.type].filter((item) => {
+                let keys = [...search.keys()];
+                return keys && keys.length
+                  ? keys.includes(item.collection)
+                  : true;
+              }),
             width < 768 ? 1 : width < 1536 ? 2 : 3
           ).map((column: any) => (
             <div className="flex-1">
