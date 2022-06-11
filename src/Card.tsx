@@ -21,6 +21,7 @@ const Card = ({ item }) => {
             )}
             controls={!isLoading}
             onLoadedData={() => setLoading(false)}
+            onLoadStart={() => setLoading(false)}
           >
             <source src={item["path"]} type="video/mp4"></source>
           </video>
