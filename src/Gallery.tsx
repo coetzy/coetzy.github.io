@@ -78,7 +78,7 @@ const Filter = () => {
         {label}
       </button>
       {isOpen && (
-        <nav className="absolute inset-0 px-8 py-20 text-black bg-white/90">
+        <nav className="absolute inset-0 px-8 py-20 text-black bg-white/90 z-10">
           <div className="flex w-full items-center justify-between">
             <span className="p-2 text-2xl font-saira tracking-header">
               {label}
