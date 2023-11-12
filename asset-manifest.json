@@ -1,29 +1,12 @@
 {
   "files": {
-    "main.css": "/static/css/main.2c42e2c9.css",
-    "main.js": "/static/js/main.28ca65a0.js",
-    "static/js/787.83aed2d4.chunk.js": "/static/js/787.83aed2d4.chunk.js",
-    "static/media/saira-extra-condensed-all-400-normal.woff": "/static/media/saira-extra-condensed-all-400-normal.422f6067855c3af5681e.woff",
-    "static/media/oswald-all-200-normal.woff": "/static/media/oswald-all-200-normal.949fe0996662cffea829.woff",
-    "static/media/saira-extra-condensed-latin-400-normal.woff2": "/static/media/saira-extra-condensed-latin-400-normal.adfcb9d5dda69f93e355.woff2",
-    "static/media/saira-extra-condensed-latin-ext-400-normal.woff2": "/static/media/saira-extra-condensed-latin-ext-400-normal.73b714caae93fa59818b.woff2",
-    "static/media/oswald-latin-200-normal.woff2": "/static/media/oswald-latin-200-normal.988c3eb49827a1e74c78.woff2",
-    "static/media/oswald-latin-ext-200-normal.woff2": "/static/media/oswald-latin-ext-200-normal.2467bdcfd4c64b0ed7ad.woff2",
-    "static/media/saira-extra-condensed-vietnamese-400-normal.woff2": "/static/media/saira-extra-condensed-vietnamese-400-normal.97102f9f4cd3cfde0ff8.woff2",
-    "static/media/oswald-cyrillic-200-normal.woff2": "/static/media/oswald-cyrillic-200-normal.123efaea661db116776d.woff2",
-    "static/media/oswald-vietnamese-200-normal.woff2": "/static/media/oswald-vietnamese-200-normal.f55d69fe657c5280d4b9.woff2",
-    "static/media/oswald-cyrillic-ext-200-normal.woff2": "/static/media/oswald-cyrillic-ext-200-normal.77a9f2358ff082cc0980.woff2",
-    "static/media/instagram-brands.svg": "/static/media/instagram-brands.7c6bfe4680b1cacb69d906510226cbf9.svg",
-    "static/media/linkedin-brands.svg": "/static/media/linkedin-brands.787aa301244425e7fe5bdcff7917892f.svg",
+    "main.js": "/static/js/main.90657cb8.js",
+    "static/js/787.6542392f.chunk.js": "/static/js/787.6542392f.chunk.js",
     "index.html": "/index.html",
-    "static/media/phone-flip-solid.svg": "/static/media/phone-flip-solid.ab98421801cb25251057a3461b6eb010.svg",
-    "static/media/envelope-solid.svg": "/static/media/envelope-solid.5c1c1b728e1ee5d36dec522469b3186e.svg",
-    "main.2c42e2c9.css.map": "/static/css/main.2c42e2c9.css.map",
-    "main.28ca65a0.js.map": "/static/js/main.28ca65a0.js.map",
-    "787.83aed2d4.chunk.js.map": "/static/js/787.83aed2d4.chunk.js.map"
+    "main.90657cb8.js.map": "/static/js/main.90657cb8.js.map",
+    "787.6542392f.chunk.js.map": "/static/js/787.6542392f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2c42e2c9.css",
-    "static/js/main.28ca65a0.js"
+    "static/js/main.90657cb8.js"
   ]
 }
